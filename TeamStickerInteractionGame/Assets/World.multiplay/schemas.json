@@ -1,0 +1,12 @@
+{
+    "State" : {"players" : {"map" : "Player"},"roomState" : "number","playTime" : "number","redScore" : "number","blueScore" : "number","blueTeam" : {"array" : "Player"},"redTeam" : {"array" : "Player"}},
+    "Position" : {"x" : "number","y" : "number","z" : "number"},
+    "Rotation" : {"w" : "number","x" : "number","y" : "number","z" : "number"},
+    "CharacterState" : {"TryJump" : "boolean","CurrentState" : "number","CurrentStateStatus" : "number"},
+    "PlayState" : {"isTagger" : "boolean","isAlive" : "boolean"},
+    "UserInfo" : {"UserId" : "string","position" : "Position","rotation" : "Rotation","characterState" : "CharacterState","playState" : "PlayState"},
+    "Vector3" : {"x" : "number","y" : "number","z" : "number"},
+    "Transform" : {"position" : "Vector3","rotation" : "Vector3"},
+    "Items": { "freezeItemCnt": "number"},
+    "Player" : {"sessionId" : "string","zepetoHash" : "string","zepetoUserId" : "string","transform" : "Transform","state" : "number","isBlue" : "boolean","typeOfSticker" : "string","freezeTime" : "number","blockTime" : "number",  "items": "Items"}
+}

@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: d134683446b624f6dbb0977764f08f35
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass tsAudioManager extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        this.audioSource
+    = this.gameObject.AddComponent($typeof(UnityEngine_1.AudioSource));\r\n    }\r\n   
+    audioWaiting() {\r\n        this.audioSource.clip = this.audioClipWaiting;\r\n       
+    this.audioSource.loop = true;\r\n        this.audioSource.Play();\r\n    }\r\n   
+    audioGetSticker() {\r\n        this.audioSource.clip = this.audioClipGetSticker;\r\n       
+    this.audioSource.loop = false;\r\n        this.audioSource.Play();\r\n    }\r\n   
+    audioTeleport() {\r\n        this.audioSource.clip = this.audioClipTeleport;\r\n       
+    this.audioSource.loop = false;\r\n        this.audioSource.Play();\r\n    }\r\n   
+    audioPushSticker() {\r\n        this.audioSource.clip = this.audioClipPushSticker;\r\n       
+    this.audioSource.loop = false;\r\n        this.audioSource.Play();\r\n    }\r\n   
+    audioBellStart() {\r\n        this.audioSource.clip = this.audioClipBellStart;\r\n       
+    this.audioSource.loop = false;\r\n        this.audioSource.Play();\r\n    }\r\n   
+    audioBellEnd() {\r\n        this.audioSource.clip = this.audioClipBellEnd;\r\n       
+    this.audioSource.loop = false;\r\n        this.audioSource.Play();\r\n    }\r\n}\r\nexports.default
+    = tsAudioManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNBdWRpb01hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0c0F1ZGlvTWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFvRDtBQUNwRCxpREFBcUQ7QUFFckQsTUFBcUIsY0FBZSxTQUFRLHFDQUFxQjtJQWE3RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyx5QkFBVyxFQUFHLENBQUM7SUFDbkUsQ0FBQztJQUVNLFlBQVk7UUFDZixJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsZ0JBQWdCLENBQUM7UUFDOUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDO1FBQzdCLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDNUIsQ0FBQztJQUVNLGVBQWU7UUFDbEIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLG1CQUFtQixDQUFDO1FBQ2pELElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxHQUFHLEtBQUssQ0FBQztRQUM5QixJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksRUFBRSxDQUFDO0lBQzVCLENBQUM7SUFFTSxhQUFhO1FBQ2hCLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQyxpQkFBaUIsQ0FBQztRQUMvQyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxLQUFLLENBQUM7UUFDOUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsQ0FBQztJQUM1QixDQUFDO0lBRU0sZ0JBQWdCO1FBQ25CLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQyxvQkFBb0IsQ0FBQztRQUNsRCxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxLQUFLLENBQUM7UUFDOUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsQ0FBQztJQUM1QixDQUFDO0lBRU0sY0FBYztRQUNqQixJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsa0JBQWtCLENBQUM7UUFDaEQsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEdBQUcsS0FBSyxDQUFDO1FBQzlCLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDNUIsQ0FBQztJQUVNLFlBQVk7UUFDZixJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsZ0JBQWdCLENBQUM7UUFDOUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEdBQUcsS0FBSyxDQUFDO1FBQzlCLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDNUIsQ0FBQztDQUVKO0FBckRELGlDQXFEQyJ9","assetPath":"Assets/Scripts/tsAudioManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.AudioModule","name":"audioClipGetSticker","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AudioModule","name":"audioClipTeleport","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AudioModule","name":"audioClipPushSticker","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AudioModule","name":"audioClipBellStart","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AudioModule","name":"audioClipBellEnd","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AudioModule","name":"audioClipWaiting","type":"UnityEngine.AudioClip","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"tsAudioManager","description":""},"isCompiled":true}'
+  typescriptHash: ccb0afcbc3607857a0f2c3b7082a57dd

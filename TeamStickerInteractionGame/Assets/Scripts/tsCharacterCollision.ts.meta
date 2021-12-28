@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 025b4baf864e54fe4a4782ed71a2784d
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst tsClientStarter_1
+    = require(\\\"./tsClientStarter\\\");\\r\\nconst tsAudioManager_1 = require(\\\"./tsAudioManager\\\");\\r\\nconst
+    ZEPETO_Character_Controller_1 = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nconst
+    UnityEngine_UI_1 = require(\\\"UnityEngine.UI\\\");\\r\\nclass tsCharacterCollision
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    constructor() {\\r\\n       
+    super(...arguments);\\r\\n        this.GameManager = UnityEngine_1.GameObject.Find(\\\"GameManager\\\").GetComponent($typeof(tsClientStarter_1.default));\\r\\n       
+    this.AudioManager = UnityEngine_1.GameObject.Find(\\\"AudioManager\\\").GetComponent($typeof(tsAudioManager_1.default));\\r\\n       
+    this.tpTime = 0;\\r\\n        // private ActiveSticker(typeOfSticker: string)
+    {\\r\\n        //     if (typeOfSticker.includes(\\\"AngrySticker\\\")) {\\r\\n       
+    //         this.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(1).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(2).gameObject.SetActive(false);\\r\\n       
+    //     } else if (typeOfSticker.includes(\\\"GreatSticker\\\")) {\\r\\n       
+    //         this.transform.GetChild(2).GetChild(0).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(1).gameObject.SetActive(true);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(2).gameObject.SetActive(false);\\r\\n       
+    //     } else if (typeOfSticker.includes(\\\"SmileSticker\\\")) {\\r\\n       
+    //         this.transform.GetChild(2).GetChild(0).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(1).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(2).gameObject.SetActive(true);\\r\\n       
+    //     } else if (typeOfSticker === \\\"\\\") {\\r\\n        //         this.transform.GetChild(2).GetChild(0).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(1).gameObject.SetActive(false);\\r\\n       
+    //         this.transform.GetChild(2).GetChild(2).gameObject.SetActive(false);\\r\\n       
+    //     }\\r\\n        // }\\r\\n    }\\r\\n    Start() {\\r\\n        this.effectStickerDisappear
+    = UnityEngine_1.Resources.Load(\\\"effectStickerDisappear\\\");\\r\\n       
+    this.freezeItemButton = UnityEngine_1.GameObject.Find(\\\"Btn-FreezeItem\\\").GetComponent($typeof(UnityEngine_UI_1.Button));\\r\\n       
+    console.log(\\\"freezeItemButton : \\\" + this.freezeItemButton);\\r\\n       
+    this.freezeItemButton.onClick.AddListener(() => {\\r\\n            // add button
+    click event\\r\\n            if (!this.freezeItemButton.transform.GetChild(1).gameObject.activeSelf)
+    {\\r\\n                console.log('freezeItemButton onClick');\\r\\n               
+    let closePlayerSessionIDs = this.GetClosePlayerSessionIDs();\\r\\n               
+    console.log(closePlayerSessionIDs);\\r\\n                let isBlue = this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).isBlue;\\r\\n               
+    for (let i = 0; i < closePlayerSessionIDs.length; i++) {\\r\\n                   
+    if (this.GameManager.room.State.players.get_Item(closePlayerSessionIDs[i]).isBlue
+    !== isBlue)\\r\\n                        this.GameManager.SendFreezePlayer(closePlayerSessionIDs[i]);\\r\\n               
+    }\\r\\n                this.GameManager.SendUsingItem(0);\\r\\n            }\\r\\n       
+    });\\r\\n    }\\r\\n    Update() {\\r\\n        if (3 < this.tpTime && this.tpTime
+    < 3.1) {\\r\\n            ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.Teleport(new
+    UnityEngine_1.Vector3(-1.84, 1, -7.37), this.transform.rotation);\\r\\n       
+    }\\r\\n        else if (-3.1 < this.tpTime && this.tpTime < -3) {\\r\\n           
+    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.Teleport(new
+    UnityEngine_1.Vector3(56.02, 1, 24.51), this.transform.rotation);\\r\\n       
+    }\\r\\n        if (this.freezeItemButton.transform.GetChild(1).gameObject.activeSelf
+    && this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).items.freezeItemCnt
+    > 0)\\r\\n            this.freezeItemButton.transform.GetChild(1).gameObject.SetActive(false);\\r\\n       
+    else if (!this.freezeItemButton.transform.GetChild(1).gameObject.activeSelf &&
+    this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).items.freezeItemCnt
+    <= 0)\\r\\n            this.freezeItemButton.transform.GetChild(1).gameObject.SetActive(true);\\r\\n       
+    this.freezeItemButton.transform.GetChild(0).GetComponent($typeof(UnityEngine_UI_1.Text)).text
+    = String(this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).items.freezeItemCnt);\\r\\n   
+    }\\r\\n    OnTriggerEnter(other) {\\r\\n        console.log(`OnTriggerEnter :
+    ${other.name}`);\\r\\n        if (other.name.includes(\\\"Sticker\\\")) {\\r\\n           
+    this.takeSticker(other);\\r\\n        }\\r\\n        else if (other.name.includes(\\\"Post\\\"))
+    {\\r\\n            this.updateScore(other);\\r\\n        }\\r\\n        else
+    if (other.name.includes(\\\"TP\\\")) {\\r\\n            this.tpTime = 0;\\r\\n       
+    }\\r\\n    }\\r\\n    OnTriggerStay(other) {\\r\\n        // console.log(this.tpTime);\\r\\n       
+    if (other.name === \\\"TPtoRedLamp\\\") {\\r\\n            this.tpTime += UnityEngine_1.Time.deltaTime;\\r\\n       
+    }\\r\\n        else if (other.name === \\\"TPtoBlueLamp\\\") {\\r\\n           
+    this.tpTime -= UnityEngine_1.Time.deltaTime;\\r\\n        }\\r\\n    }\\r\\n   
+    takeSticker(other) {\\r\\n        // \uC2A4\uD2F0\uCEE4\uB97C \uAC00\uC9C0\uACE0
+    \uC788\uC73C\uBA74 \uD568\uC218 \uD0C8\uCD9C\\r\\n        if (this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).typeOfSticker
+    != \\\"\\\")\\r\\n            return;\\r\\n        // \uC2A4\uD2F0\uCEE4\uAC00
+    \uC774\uBBF8 \uC0C1\uB300\uBC29\uC774 \uAC00\uC9C0\uACE0 \uC788\uB294 \uC2A4\uD2F0\uCEE4\uC758
+    \uACBD\uC6B0 \uD568\uC218 \uD0C8\uCD9C\\r\\n        if (other.name === \\\"AngrySticker\\\"
+    || other.name === \\\"GreatSticker\\\" || other.name === \\\"SmileSticker\\\")\\r\\n           
+    return;\\r\\n        // \uC704\uC758 \uC608\uC678 \uC0C1\uD669\uB4E4\uC774 \uC544\uB2C8\uB77C\uBA74
+    \uC2A4\uD2F0\uCEE4\uB97C \uC5BB\uACE0 \uB9F5\uC5D0 \uC788\uB294 \uC2A4\uD2F0\uCEE4\uB294
+    \uC9C0\uC6C0(\uC11C\uBC84\uC640 \uD1B5\uC2E0)\\r\\n        UnityEngine_1.GameObject.Instantiate(this.effectStickerDisappear,
+    this.gameObject.transform);\\r\\n        this.GameManager.SendTypeOfSticker(this.GameManager.room.SessionId,
+    other.name);\\r\\n        this.GameManager.SendDeleteSticker(other.name);\\r\\n       
+    this.AudioManager.audioGetSticker();\\r\\n        //this.ActiveSticker(other.name);\\r\\n   
+    }\\r\\n    // \uC810\uC218 \uC5C5\uB370\uC774\uD2B8\\r\\n    updateScore(other)
+    {\\r\\n        // \uC2A4\uD2F0\uCEE4\uB97C \uAC00\uC9C0\uACE0 \uC788\uC9C0 \uC54A\uB2E4\uBA74
+    \uD568\uC218 \uD0C8\uCD9C\\r\\n        let typeOfSticker = this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).typeOfSticker;\\r\\n       
+    if (typeOfSticker === \\\"\\\" || typeOfSticker === null || typeOfSticker ===
+    undefined)\\r\\n            return;\\r\\n        // \uC720\uC800\uC758 \uD300\uC774
+    \uC5C6\uB2E4\uBA74 \uD568\uC218 \uD0C8\uCD9C\\r\\n        let playerIsBlue =
+    this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).isBlue;\\r\\n       
+    if (playerIsBlue === null || playerIsBlue === undefined)\\r\\n            return;\\r\\n       
+    // \uC5B4\uB290 \uD300\uC758 \uACE8\uB300\uC778\uC9C0 \uD655\uC778\\r\\n       
+    let postIsBlue;\\r\\n        if (other.name === \\\"CheckRedPost\\\") {\\r\\n           
+    postIsBlue = false;\\r\\n            console.log(`[looog] postIsBlue CheckRedPost
+    = ${postIsBlue}`);\\r\\n        }\\r\\n        else if (other.name === \\\"CheckBluePost\\\")
+    {\\r\\n            postIsBlue = true;\\r\\n            console.log(`[looog] postIsBlue
+    CheckRedPost = ${postIsBlue}`);\\r\\n        }\\r\\n        // \uD300\uC774 \uD30C\uC545\uB418\uC9C0
+    \uC54A\uC73C\uBA74 \uD568\uC218 \uD0C8\uCD9C\\r\\n        if (postIsBlue ===
+    undefined || postIsBlue === null)\\r\\n            return;\\r\\n        // \uC0C1\uD669\uC5D0
+    \uB9DE\uB294 \uC810\uC218 \uD310\uB2E8\\r\\n        let score;\\r\\n        if
+    (playerIsBlue === postIsBlue) {\\r\\n            if (typeOfSticker.includes(\\\"GreatSticker\\\"))
+    {\\r\\n                score = 3;\\r\\n            }\\r\\n            else if
+    (typeOfSticker.includes(\\\"SmileSticker\\\")) {\\r\\n                score =
+    1;\\r\\n            }\\r\\n        }\\r\\n        else if (playerIsBlue !== postIsBlue)
+    {\\r\\n            if (typeOfSticker.includes(\\\"AngrySticker\\\")) {\\r\\n               
+    score = -3;\\r\\n            }\\r\\n        }\\r\\n        // \uC810\uC218\uAC00
+    \uC815\uD574\uC9C0\uC9C0 \uC54A\uC73C\uBA74 \uD568\uC218 \uD0C8\uCD9C\\r\\n       
+    if (score === undefined)\\r\\n            return;\\r\\n        console.log(`Update
+    playerIsBlue = ${playerIsBlue}, postIsBlue = ${postIsBlue}, score = ${score}`);\\r\\n       
+    // if (postIsBlue !== undefined && score !== undefined && playerIsBlue !== undefined)
+    {\\r\\n        this.AudioManager.audioPushSticker();\\r\\n        UnityEngine_1.GameObject.Instantiate(this.effectStickerDisappear,
+    this.gameObject.transform);\\r\\n        this.GameManager.SendTypeOfSticker(this.GameManager.room.SessionId,
+    \\\"\\\");\\r\\n        this.GameManager.SendUpdateScore(postIsBlue, score);\\r\\n       
+    // }\\r\\n    }\\r\\n    GetClosePlayerSessionIDs() {\\r\\n        let hitCollder
+    = UnityEngine_1.Physics.OverlapSphere(this.transform.position, 5);\\r\\n       
+    let playerSessionIDs = [];\\r\\n        for (let i = 0; i < hitCollder.length;
+    i++) {\\r\\n            if (hitCollder[i].name.includes(\\\"ZepetoCharacter\\\"))
+    {\\r\\n                //\uC138\uC158 \uC544\uC774\uB514 \uD30C\uC2F1\\r\\n               
+    let parseName = hitCollder[i].name.split(\\\"_\\\");\\r\\n                playerSessionIDs.push(`${parseName[2]}_${parseName[3]}`);\\r\\n           
+    }\\r\\n        }\\r\\n        return playerSessionIDs;\\r\\n    }\\r\\n}\\r\\nexports.default
+    = tsCharacterCollision;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNDaGFyYWN0ZXJDb2xsaXNpb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0c0NoYXJhY3RlckNvbGxpc2lvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFzRztBQUN0RyxpREFBc0Q7QUFFdEQsdURBQThDO0FBQzlDLHFEQUE4QztBQUM5Qyw2RUFBNEQ7QUFDNUQsbURBQThDO0FBRTlDLE1BQXFCLG9CQUFxQixTQUFRLHFDQUFxQjtJQUF2RTs7UUFFWSxnQkFBVyxHQUFHLHdCQUFVLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxDQUFDLFlBQVksU0FBQyx5QkFBYSxHQUFJO1FBQzNFLGlCQUFZLEdBQUcsd0JBQVUsQ0FBQyxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUMsWUFBWSxTQUFDLHdCQUFjLEdBQUk7UUFDOUUsV0FBTSxHQUFHLENBQUMsQ0FBQztRQXdKbkIsaURBQWlEO1FBQ2pELG9EQUFvRDtRQUNwRCw2RUFBNkU7UUFDN0UsOEVBQThFO1FBQzlFLDhFQUE4RTtRQUM5RSwyREFBMkQ7UUFDM0QsOEVBQThFO1FBQzlFLDZFQUE2RTtRQUM3RSw4RUFBOEU7UUFDOUUsMkRBQTJEO1FBQzNELDhFQUE4RTtRQUM5RSw4RUFBOEU7UUFDOUUsNkVBQTZFO1FBQzdFLHlDQUF5QztRQUN6Qyw4RUFBOEU7UUFDOUUsOEVBQThFO1FBQzlFLDhFQUE4RTtRQUM5RSxRQUFRO1FBQ1IsSUFBSTtJQUlSLENBQUM7SUF6S0csS0FBSztRQUNELElBQUksQ0FBQyxzQkFBc0IsR0FBRyx1QkFBUyxDQUFDLElBQUksQ0FBQyx3QkFBd0IsQ0FBZSxDQUFDO1FBQ3JGLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyx3QkFBVSxDQUFDLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDLFlBQVksU0FBQyx1QkFBTSxFQUFHLENBQUM7UUFDakYsT0FBTyxDQUFDLEdBQUcsQ0FBQyxxQkFBcUIsR0FBRyxJQUFJLENBQUMsZ0JBQWdCLENBQUMsQ0FBQztR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\",\"assetPath\":\"Assets/Scripts/tsCharacterCollision.ts\",\"manifest\":{\"properties\":[],\"name\":\"tsCharacterCollision\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: bc865240213c57ca4e02f8964634a5fa

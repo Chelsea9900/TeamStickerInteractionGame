@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 47ba13c0929c8478eb339920713ab999
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass tsEffectScoreSelfDestroy
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Start() {\\r\\n       
+    this.Invoke(\\\"SelfDestroy\\\", 300000);\\r\\n        console.log(`[Log] \uC778\uBCF4\uD06C
+    this.Invoke(\\\"SelfDestroy\\\", 10);`);\\r\\n    }\\r\\n    SelfDestroy() {\\r\\n       
+    UnityEngine_1.GameObject.Destroy(this.gameObject);\\r\\n        console.log(`[Log]
+    GameObject.Destroy(${this.gameObject});`);\\r\\n    }\\r\\n}\\r\\nexports.default
+    = tsEffectScoreSelfDestroy;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNFZmZlY3RTY29yZVNlbGZEZXN0cm95LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidHNFZmZlY3RTY29yZVNlbGZEZXN0cm95LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXdDO0FBQ3hDLGlEQUFxRDtBQUlyRCxNQUFxQix3QkFBeUIsU0FBUSxxQ0FBcUI7SUFFdkUsS0FBSztRQUNELElBQUksQ0FBQyxNQUFNLENBQUMsYUFBYSxFQUFFLE1BQU0sQ0FBQyxDQUFDO1FBQ25DLE9BQU8sQ0FBQyxHQUFHLENBQUMsMkNBQTJDLENBQUMsQ0FBQztJQUM3RCxDQUFDO0lBRUQsV0FBVztRQUNQLHdCQUFVLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQztRQUNwQyxPQUFPLENBQUMsR0FBRyxDQUFDLDRCQUE0QixJQUFJLENBQUMsVUFBVSxJQUFJLENBQUMsQ0FBQztJQUVqRSxDQUFDO0NBQ0o7QUFaRCwyQ0FZQyJ9\",\"assetPath\":\"Assets/Scripts/tsEffectScoreSelfDestroy.ts\",\"manifest\":{\"properties\":[],\"name\":\"tsEffectScoreSelfDestroy\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 140446191597e22b40141d1dece4bce7

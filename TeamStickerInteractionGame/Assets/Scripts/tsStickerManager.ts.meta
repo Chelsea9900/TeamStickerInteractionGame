@@ -1,0 +1,47 @@
+fileFormatVersion: 2
+guid: 2f9f2b7df21004863830fd4440ad1eed
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass
+    tsStickerManager extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    //\uD14C\uC2A4\uD2B8\uC6A9.
+    P \uB204\uB974\uBA74 \uB2E4 \uB738\\r\\n    CreateSticker() {\\r\\n        for
+    (let i = 0; i < this.transform.childCount; i++) {\\r\\n            this.transform.GetChild(i).gameObject.SetActive(true);\\r\\n       
+    }\\r\\n    }\\r\\n    CreateSmileSticker() {\\r\\n        for (let i = 0; i <
+    this.transform.childCount; i++) {\\r\\n            if (this.transform.GetChild(i).gameObject.name.includes(\\\"SmileSticker\\\"))\\r\\n               
+    this.transform.GetChild(i).gameObject.SetActive(true);\\r\\n        }\\r\\n   
+    }\\r\\n    CreateStickerFirst() {\\r\\n        for (let i = 0; i < this.transform.childCount;
+    i++) {\\r\\n            if (this.transform.GetChild(i).gameObject.name.includes(\\\"GreatSticker\\\")
+    || this.transform.GetChild(i).gameObject.name.includes(\\\"AngrySticker\\\"))\\r\\n               
+    if (this.transform.GetChild(i).gameObject.name.includes(\\\"(1)\\\") || this.transform.GetChild(i).gameObject.name.includes(\\\"(1004)\\\"))\\r\\n                   
+    this.transform.GetChild(i).gameObject.SetActive(true);\\r\\n        }\\r\\n   
+    }\\r\\n    CreateStickerSecond() {\\r\\n        for (let i = 0; i < this.transform.childCount;
+    i++) {\\r\\n            if (this.transform.GetChild(i).gameObject.name.includes(\\\"GreatSticker\\\")
+    || this.transform.GetChild(i).gameObject.name.includes(\\\"AngrySticker\\\"))\\r\\n               
+    if (this.transform.GetChild(i).gameObject.name.includes(\\\"(2)\\\") || this.transform.GetChild(i).gameObject.name.includes(\\\"(1005)\\\"))\\r\\n                   
+    this.transform.GetChild(i).gameObject.SetActive(true);\\r\\n        }\\r\\n   
+    }\\r\\n    CreateStickerThird() {\\r\\n        for (let i = 0; i < this.transform.childCount;
+    i++) {\\r\\n            if (this.transform.GetChild(i).gameObject.name.includes(\\\"GreatSticker\\\")
+    || this.transform.GetChild(i).gameObject.name.includes(\\\"AngrySticker\\\"))\\r\\n               
+    if (this.transform.GetChild(i).gameObject.name.includes(\\\"(3)\\\") || this.transform.GetChild(i).gameObject.name.includes(\\\"(1006)\\\"))\\r\\n                   
+    this.transform.GetChild(i).gameObject.SetActive(true);\\r\\n        }\\r\\n   
+    }\\r\\n    CreateStickerByName(StickerName) {\\r\\n        this.transform.Find(StickerName).gameObject.SetActive(true);\\r\\n   
+    }\\r\\n    DeleteStickerByName(stickerName) {\\r\\n        this.transform.Find(stickerName).gameObject.SetActive(false);\\r\\n   
+    }\\r\\n}\\r\\nexports.default = tsStickerManager;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNTdGlja2VyTWFuYWdlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRzU3RpY2tlck1hbmFnZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFFckQsTUFBcUIsZ0JBQWlCLFNBQVEscUNBQXFCO0lBRS9ELGlCQUFpQjtJQUNWLGFBQWE7UUFDaEIsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsVUFBVSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBQ2hELElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDekQ7SUFDTCxDQUFDO0lBRU0sa0JBQWtCO1FBQ3JCLEtBQUssSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLFVBQVUsRUFBRSxDQUFDLEVBQUUsRUFBRTtZQUNoRCxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLGNBQWMsQ0FBQztnQkFDbkUsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUM3RDtJQUNMLENBQUM7SUFFTSxrQkFBa0I7UUFDckIsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsVUFBVSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBQ2hELElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDLElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDO2dCQUMxSSxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLEtBQUssQ0FBQyxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQztvQkFDM0gsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUNqRTtJQUNMLENBQUM7SUFDTSxtQkFBbUI7UUFDdEIsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsVUFBVSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBQ2hELElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDLElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDO2dCQUMxSSxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLEtBQUssQ0FBQyxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQztvQkFDM0gsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUNqRTtJQUNMLENBQUM7SUFDTSxrQkFBa0I7UUFDckIsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsVUFBVSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBQ2hELElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDLElBQUksSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsY0FBYyxDQUFDO2dCQUMxSSxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLEtBQUssQ0FBQyxJQUFJLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQztvQkFDL0gsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUM3RDtJQUNMLENBQUM7SUFFTSxtQkFBbUIsQ0FBQyxXQUFtQjtRQUMxQyxJQUFJLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ2hFLENBQUM7SUFFTSxtQkFBbUIsQ0FBQyxXQUFtQjtRQUMxQyxJQUFJLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ2pFLENBQUM7Q0FDSjtBQTdDRCxtQ0E2Q0MifQ==\",\"assetPath\":\"Assets/Scripts/tsStickerManager.ts\",\"manifest\":{\"properties\":[],\"name\":\"tsStickerManager\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 3179fc5e21cb2488f96ed95ebd6c9763

@@ -1,0 +1,67 @@
+fileFormatVersion: 2
+guid: 9067e504b4db346f4ba61acd6f8b9e32
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst tsClientStarter_1 = require(\"./tsClientStarter\");\r\nclass
+    tsStickerAction extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor()
+    {\r\n        super(...arguments);\r\n        this.GameManager = UnityEngine_1.GameObject.Find(\"GameManager\").GetComponent($typeof(tsClientStarter_1.default));\r\n   
+    }\r\n    Start() {\r\n        this.effectStickerAction = UnityEngine_1.Resources.Load(\"effectStickerAction\");\r\n   
+    }\r\n    FixedUpdate() {\r\n        this.Crash2OtherTeamPlayer();\r\n    }\r\n   
+    GetCloseOtherTeamPlayerSessionID() {\r\n        let hitCollder = UnityEngine_1.Physics.OverlapSphere(this.transform.position,
+    0.5);\r\n        if (this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId)
+    === null) {\r\n            console.log(`[Log] tsStickerAction this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId)
+    is null`);\r\n            console.log(`[Log] this.GameManager.room.SessionId
+    : ${this.GameManager.room.SessionId}`);\r\n            return null;\r\n       
+    }\r\n        let isBlue = this.GameManager.room.State.players.get_Item(this.GameManager.room.SessionId).isBlue;\r\n       
+    if (isBlue === null)\r\n            return null;\r\n        for (let i = 0; i
+    < hitCollder.length; i++) {\r\n            if (hitCollder[i].name.includes(\"ZepetoCharacter\"))
+    {\r\n                let parseName = hitCollder[i].name.split(\"_\");\r\n               
+    if (this.GameManager.room.State.players.get_Item(`${parseName[2]}_${parseName[3]}`).isBlue
+    !== isBlue)\r\n                    return `${parseName[2]}_${parseName[3]}`;\r\n           
+    }\r\n        }\r\n        return null;\r\n    }\r\n    Crash2OtherTeamPlayer()
+    {\r\n        let otherTeamPlayerSessionId = this.GetCloseOtherTeamPlayerSessionID();\r\n       
+    if (otherTeamPlayerSessionId === null)\r\n            return;\r\n        let
+    myPlayerSessionId = this.GameManager.room.SessionId;\r\n        let myTypeOfSticker
+    = this.GameManager.room.State.players.get_Item(myPlayerSessionId).typeOfSticker;\r\n       
+    let otherPlayerTypeOfSticker = this.GameManager.room.State.players.get_Item(otherTeamPlayerSessionId).typeOfSticker;\r\n       
+    let blockTime = this.GameManager.room.State.players.get_Item(myPlayerSessionId).blockTime
+    + this.GameManager.room.State.players.get_Item(otherTeamPlayerSessionId).blockTime;\r\n       
+    if (myTypeOfSticker === \"\" && otherPlayerTypeOfSticker === \"\" || blockTime
+    > 0)\r\n            return;\r\n        if (myTypeOfSticker === \"\" && otherPlayerTypeOfSticker
+    !== \"\") {\r\n            myTypeOfSticker = otherPlayerTypeOfSticker;\r\n           
+    otherPlayerTypeOfSticker = \"\";\r\n            console.log(`[after SendBlockTime]
+    NY meTOS : ${myTypeOfSticker} otherTOP: ${otherPlayerTypeOfSticker}`);\r\n       
+    }\r\n        else if (myTypeOfSticker !== \"\" && otherPlayerTypeOfSticker ===
+    \"\") {\r\n            otherPlayerTypeOfSticker = myTypeOfSticker;\r\n           
+    myTypeOfSticker = \"\";\r\n            console.log(`[after SendBlockTime] YN
+    meTOS : ${myTypeOfSticker} otherTOP: ${otherPlayerTypeOfSticker}`);\r\n       
+    }\r\n        else if (myTypeOfSticker !== \"\" && otherPlayerTypeOfSticker !==
+    \"\") {\r\n            myTypeOfSticker = \"\";\r\n            otherPlayerTypeOfSticker
+    = \"\";\r\n            this.GameManager.SendDumpSticker(myTypeOfSticker);\r\n           
+    this.GameManager.SendDumpSticker(otherPlayerTypeOfSticker);\r\n            this.GameManager.SendFreezePlayer(otherTeamPlayerSessionId);\r\n           
+    this.GameManager.SendFreezePlayer(myPlayerSessionId);\r\n            console.log(`[after
+    SendBlockTime] YY meTOS : ${myTypeOfSticker} otherTOP: ${otherPlayerTypeOfSticker}`);\r\n       
+    }\r\n        UnityEngine_1.GameObject.Instantiate(this.effectStickerAction, this.gameObject.transform);\r\n       
+    this.GameManager.SendBlockTime(myPlayerSessionId);\r\n        this.GameManager.SendBlockTime(otherTeamPlayerSessionId);\r\n       
+    this.GameManager.SendTypeOfSticker(myPlayerSessionId, myTypeOfSticker);\r\n       
+    this.GameManager.SendTypeOfSticker(otherTeamPlayerSessionId, otherPlayerTypeOfSticker);\r\n   
+    }\r\n}\r\nexports.default = tsStickerAction;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNTdGlja2VyQWN0aW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidHNTdGlja2VyQWN0aW9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQTZEO0FBQzdELGlEQUFzRDtBQUV0RCx1REFBOEM7QUFDOUMsTUFBcUIsZUFBZ0IsU0FBUSxxQ0FBcUI7SUFBbEU7O1FBQ1ksZ0JBQVcsR0FBRyx3QkFBVSxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQyxZQUFZLFNBQUMseUJBQWEsR0FBSTtJQTZFdkYsQ0FBQztJQTFFRyxLQUFLO1FBQ0QsSUFBSSxDQUFDLG1CQUFtQixHQUFHLHVCQUFTLENBQUMsSUFBSSxDQUFDLHFCQUFxQixDQUFlLENBQUM7SUFDbkYsQ0FBQztJQUVELFdBQVc7UUFDUCxJQUFJLENBQUMscUJBQXFCLEVBQUUsQ0FBQztJQUNqQyxDQUFDO0lBRU8sZ0NBQWdDO1FBQ3BDLElBQUksVUFBVSxHQUFHLHFCQUFPLENBQUMsYUFBYSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO1FBRXJFLElBQUcsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssSUFBSSxFQUFFO1lBQ3ZGLE9BQU8sQ0FBQyxHQUFHLENBQUMsNkdBQTZHLENBQUMsQ0FBQztZQUMzSCxPQUFPLENBQUMsR0FBRyxDQUFDLDJDQUEyQyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxTQUFTLEVBQUUsQ0FBQyxDQUFDO1lBQzFGLE9BQU8sSUFBSSxDQUFDO1NBQ2Y7UUFFRCxJQUFJLE1BQU0sR0FBRyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FB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","assetPath":"Assets/Scripts/tsStickerAction.ts","manifest":{"properties":[{"assembly":"","name":"GameManager","type":"/Users/hongseunghyeon/Desktop/z1130/z1130main/Assets/Scripts/tsClientStarter.default","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"effectStickerAction","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"tsStickerAction","description":""},"isCompiled":true}'
+  typescriptHash: 37b7a20bc5857aaf98fb62edd53cfff5

@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 65d2f77c79ee04f92b91c88bf165f67d
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
+    NewTypescript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    OnPurchaseComplete(item)
+    {\r\n        console.log(`OnPurchaseComplete ${item}`);\r\n    }\r\n    OnPurchaseFailed(error)
+    {\r\n        console.log(\"OnPurchaseFailed : \" + error.message);\r\n    }\r\n}\r\nexports.default
+    = NewTypescript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHNQdXJjaGFzZUNhbGxiYWNrLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidHNQdXJjaGFzZUNhbGxiYWNrLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXNEO0FBRXRELE1BQXFCLGFBQWMsU0FBUSxxQ0FBcUI7SUFFNUQsa0JBQWtCLENBQUMsSUFBSTtRQUNuQixPQUFPLENBQUMsR0FBRyxDQUFDLHNCQUFzQixJQUFJLEVBQUUsQ0FBQyxDQUFDO0lBQzlDLENBQUM7SUFFRCxnQkFBZ0IsQ0FBQyxLQUFLO1FBQ2xCLE9BQU8sQ0FBQyxHQUFHLENBQUMscUJBQXFCLEdBQUcsS0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFDO0lBQ3ZELENBQUM7Q0FFSjtBQVZELGdDQVVDIn0=","assetPath":"Assets/Scripts/tsPurchaseCallback.ts","manifest":{"properties":[],"name":"NewTypescript","description":""},"isCompiled":true}'
+  typescriptHash: 92066db202c135a955577d6d1df175f7
