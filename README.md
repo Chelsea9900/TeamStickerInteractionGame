@@ -1,7 +1,6 @@
 # 🎯 찾아라! 스티커 FIND THE STICKERS
 
 ![KakaoTalk_Photo_2022-01-05-12-13-11 001](https://user-images.githubusercontent.com/93331248/148155082-7c689583-29e2-4d10-898f-106b38a0f15d.jpeg)
-![KakaoTalk_Photo_2022-01-05-16-13-49](https://user-images.githubusercontent.com/93331248/148175707-cac6aedd-31ed-4556-a9bc-ec8bae57cdc0.jpeg)
 
 
 
