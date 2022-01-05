@@ -1,4 +1,4 @@
-# TeamStickerInteractionGame
+TeamStickerInteractionGame
 # 2021 NAVERZ ZEPETO 인앱 게임 개발 비공개 공모전 
 # 공모전 결과 : 전체 1위
 
