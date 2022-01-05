@@ -1,4 +1,4 @@
-# 👾 TeamStickerInteractionGame
+# 🎯 TeamStickerInteractionGame
 
 ![KakaoTalk_Photo_2022-01-05-12-13-11 001](https://user-images.githubusercontent.com/93331248/148155082-7c689583-29e2-4d10-898f-106b38a0f15d.jpeg)
 
@@ -24,7 +24,7 @@ ZEPETO API
 TypeScript
 
 
-# 🕹 게임 기능 소개 
+# 🎯 게임 기능 소개 
 
 1. 4:4 팀전, 8명이 모이면 게임이 시작되고, 게임이 시작되면 랜덤으로 팀이 정해진다. 랜덤으로 정해진 팀(파랑팀 또는 빨강팀)에 따라 팀의 발판이 붙는다.
 
@@ -51,7 +51,7 @@ TypeScript
 12. 각종 이펙트, 오디오
 
 
-# 🎮 캡쳐 화면
+# 🎯 캡쳐 화면
 ![KakaoTalk_Photo_2022-01-05-12-13-12 002](https://user-images.githubusercontent.com/93331248/148155095-cb79993e-7740-4464-94a0-c7f9e339b87d.jpeg)
 
 ![KakaoTalk_Photo_2022-01-05-12-13-12 003](https://user-images.githubusercontent.com/93331248/148155110-0744b133-b25e-4cd6-87be-93bc3d97f619.jpeg)
